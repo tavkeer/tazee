@@ -1,3 +1,13 @@
 export 'package:flutter/material.dart';
 export 'package:get/route_manager.dart';
 export 'package:google_fonts/google_fonts.dart';
+export 'package:tazee/widgets/bottom_nav.dart';
+export 'package:get/get.dart';
+export 'package:tazee/views/landing_page/landing_page.dart';
+export 'package:tazee/views/map_page/map_page.dart';
+export 'package:tazee/views/profile_page/profile_page.dart';
+export 'package:tazee/controllers/nav_controller.dart';
+export 'package:tazee/widgets/search_bar.dart';
+export 'package:tazee/views/navigation_page/navigation_page.dart';
+export 'package:tazee/views/landing_page/components/custom_container.dart';
+export 'package:tazee/views/landing_page/components/pop_places_container.dart';

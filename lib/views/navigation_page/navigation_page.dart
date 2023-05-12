@@ -5,6 +5,19 @@ class NavigationPage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const Scaffold();
+    NavController navController = Get.put(NavController());
+    List pages = const [LandingPage(), MapPage(), ProfilePage()];
+    return Scaffold(
+      body: Stack(
+        children: [
+          Obx(
+            () => pages[navController.index.value],
+          ),
+          BottomNav(
+            navController: navController,
+          ),
+        ],
+      ),
+    );
   }
 }

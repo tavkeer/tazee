@@ -1,5 +1,3 @@
-import 'package:tazee/views/navigation_page/navigation_page.dart';
-
 import 'export_screens.dart';
 
 void main() {
@@ -11,6 +9,7 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    Get.put(ScaffoldFeatureController);
     return GetMaterialApp(
       title:
           "This App is designed for finding the best hiking and tour places in the Kashmir Valley, which include the maps and the information about the specific or any random spot in the Valley!",
@@ -21,8 +20,11 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         useMaterial3: true,
         scaffoldBackgroundColor: Colors.white,
-        fontFamily: GoogleFonts.indieFlower().fontFamily,
-        // fontFamily: GoogleFonts.urbanist().fontFamily,
+
+        fontFamily: GoogleFonts.gloriaHallelujah().fontFamily,
+        // fontFamily: GoogleFonts.inter().fontFamily,
+        // fontFamily: GoogleFonts.permanentMarker().fontFamily,
+        // fontFamily: GoogleFonts.mogra().fontFamily,
       ),
       home: const NavigationPage(),
     );
