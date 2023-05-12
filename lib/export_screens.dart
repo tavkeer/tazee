@@ -11,3 +11,8 @@ export 'package:tazee/widgets/search_bar.dart';
 export 'package:tazee/views/navigation_page/navigation_page.dart';
 export 'package:tazee/views/landing_page/components/custom_container.dart';
 export 'package:tazee/views/landing_page/components/pop_places_container.dart';
+export 'package:tazee/views/landing_page/utils/categ_list_one.dart';
+export 'package:tazee/views/landing_page/utils/categ_list_two.dart';
+export 'package:tazee/views/landing_page/utils/pop_place_list.dart';
+export 'package:tazee/views/landing_page/components/appbar.dart';
+export 'package:tazee/views/landing_page/components/body.dart';
