@@ -17,22 +17,22 @@ class CategoryListTwo extends StatelessWidget {
         children: [
           CustomContainer(
             imgPath: 'assets/alpine_lakes_s.jpeg',
-            desc: "Alpine Lakes",
+            desc: "Mountain Passes",
             width: width * 0.6,
           ),
           CustomContainer(
             imgPath: 'assets/camping_s.png',
-            desc: "Camping",
+            desc: "Peaks",
             width: width * 0.6,
           ),
           CustomContainer(
             imgPath: 'assets/hiking_s.png',
-            desc: "Hiking",
+            desc: "Alpine Meadows",
             width: width * 0.6,
           ),
           CustomContainer(
             imgPath: 'assets/alpine_lakes_s.jpeg',
-            desc: "Alpine Lakes",
+            desc: "Glaciers",
             width: width * 0.6,
           ),
         ],

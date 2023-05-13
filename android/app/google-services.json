@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "1025844190155",
+    "project_id": "waran-57510",
+    "storage_bucket": "waran-57510.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1025844190155:android:8468535373e5eaa1d7b44e",
+        "android_client_info": {
+          "package_name": "com.VoidConsole.tazee"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "1025844190155-7gdm62hm1tafskoa16lv3ankntal5ecr.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyB1m7RMumm7NR-L1onsZ2fUe8eekHFp4cw"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "1025844190155-7gdm62hm1tafskoa16lv3ankntal5ecr.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

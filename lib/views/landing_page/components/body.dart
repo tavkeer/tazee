@@ -25,7 +25,7 @@ class Body extends StatelessWidget {
 
           //plain text for reference
           const Text(
-            "Let's Travel\nNow",
+            "Let's Explore\nNow",
             style: TextStyle(
               fontSize: 45,
               height: 0.95,

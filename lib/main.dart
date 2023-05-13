@@ -1,6 +1,10 @@
 import 'export_screens.dart';
 
-void main() {
+void main() async {
+  WidgetsFlutterBinding.ensureInitialized();
+  await Firebase.initializeApp(
+    options: DefaultFirebaseOptions.currentPlatform,
+  );
   runApp(const MyApp());
 }
 
@@ -15,16 +19,14 @@ class MyApp extends StatelessWidget {
           "This App is designed for finding the best hiking and tour places in the Kashmir Valley, which include the maps and the information about the specific or any random spot in the Valley!",
       debugShowCheckedModeBanner: false,
       darkTheme: ThemeData(
-        scaffoldBackgroundColor: Colors.black,
+        scaffoldBackgroundColor: Colors.white,
+        appBarTheme: const AppBarTheme(backgroundColor: Colors.white),
       ),
       theme: ThemeData(
         useMaterial3: true,
         scaffoldBackgroundColor: Colors.white,
-
+        appBarTheme: const AppBarTheme(backgroundColor: Colors.white),
         fontFamily: GoogleFonts.gloriaHallelujah().fontFamily,
-        // fontFamily: GoogleFonts.inter().fontFamily,
-        // fontFamily: GoogleFonts.permanentMarker().fontFamily,
-        // fontFamily: GoogleFonts.mogra().fontFamily,
       ),
       home: const NavigationPage(),
     );
