@@ -6,7 +6,7 @@ export 'package:get/get.dart';
 export 'package:tazee/views/landing_page/landing_page.dart';
 export 'package:tazee/views/map_page/map_page.dart';
 export 'package:tazee/views/profile_page/profile_page.dart';
-
+export 'package:font_awesome_flutter/font_awesome_flutter.dart';
 export 'package:tazee/controllers/navigation_controller.dart';
 export 'package:tazee/widgets/search_bar.dart';
 export 'package:tazee/views/navigation_page/navigation_page.dart';
