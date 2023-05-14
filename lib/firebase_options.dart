@@ -63,6 +63,7 @@ class DefaultFirebaseOptions {
     messagingSenderId: '1025844190155',
     projectId: 'waran-57510',
     storageBucket: 'waran-57510.appspot.com',
+    androidClientId: '1025844190155-sk04orgoonoa31l52jd5heioa4g32vsv.apps.googleusercontent.com',
     iosClientId: '1025844190155-3frv03nbujk6b0nv70hktrqlqveu4tjl.apps.googleusercontent.com',
     iosBundleId: 'com.VoidConsole.tazee',
   );

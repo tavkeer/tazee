@@ -6,15 +6,18 @@ class LoginPage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    GoogleSignController controller = Get.put(GoogleSignController());
     // final double height = MediaQuery.of(context).size.height;
     final double width = MediaQuery.of(context).size.width;
     return Scaffold(
       backgroundColor: Colors.green[50],
-      body: SafeArea(
+      body: SingleChildScrollView(
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.center,
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
+            const SizedBox(height: 50),
+
             //app icon logo
             CircleAvatar(
               radius: 50,
@@ -34,7 +37,7 @@ class LoginPage extends StatelessWidget {
 
             //google signIn button
             ElevatedButton(
-              onPressed: () {},
+              onPressed: () => controller.signInWithGoogle(),
               style: ElevatedButton.styleFrom(
                 backgroundColor: Colors.white,
                 shape: const CircleBorder(),
@@ -61,76 +64,7 @@ class LoginPage extends StatelessWidget {
             const SizedBox(height: 10),
 
             //wraping email and password field
-            Padding(
-              padding: const EdgeInsets.symmetric(horizontal: 50),
-              child: Wrap(
-                direction: Axis.vertical,
-                crossAxisAlignment: WrapCrossAlignment.start,
-                children: [
-                  const Text(
-                    "Email",
-                    style: TextStyle(
-                      fontSize: 14,
-                    ),
-                  ),
-                  const SizedBox(height: 5),
-
-                  //email field
-                  Container(
-                    height: 50,
-                    width: width * 0.7,
-                    decoration: BoxDecoration(
-                      borderRadius: BorderRadius.circular(10),
-                      border: Border.all(width: 1, color: Colors.black),
-                    ),
-                    child: const TextField(
-                      decoration: InputDecoration(
-                        contentPadding: EdgeInsets.only(left: 10, top: 10),
-                        border: InputBorder.none,
-                        prefixIcon: Icon(CupertinoIcons.mail),
-                      ),
-                    ),
-                  ),
-                  const SizedBox(height: 15),
-                  const Text(
-                    "Password",
-                    style: TextStyle(
-                      fontSize: 14,
-                    ),
-                  ),
-                  const SizedBox(height: 5),
-
-                  //password field
-                  Container(
-                    height: 50,
-                    width: width * 0.7,
-                    decoration: BoxDecoration(
-                      borderRadius: BorderRadius.circular(10),
-                      border: Border.all(width: 1, color: Colors.black),
-                    ),
-                    child: const TextField(
-                      decoration: InputDecoration(
-                        contentPadding: EdgeInsets.only(left: 10, top: 10),
-                        border: InputBorder.none,
-                        prefixIcon: Icon(CupertinoIcons.lock_fill),
-                      ),
-                    ),
-                  ),
-                  const SizedBox(height: 5),
-
-                  //forgot password section
-                  InkWell(
-                    child: const Text(
-                      'Forgot Password?',
-                      style: TextStyle(
-                        color: Colors.pink,
-                      ),
-                    ),
-                    onTap: () {},
-                  ),
-                ],
-              ),
-            ),
+            LoginInputFields(width: width),
             const SizedBox(height: 20),
 
             //login section
@@ -138,7 +72,7 @@ class LoginPage extends StatelessWidget {
               height: 50,
               width: width * 0.72,
               child: ElevatedButton(
-                onPressed: () {},
+                onPressed: () => Get.offAll(const NavigationPage()),
                 style: ElevatedButton.styleFrom(
                   backgroundColor: Colors.grey.shade200,
                 ),
@@ -158,16 +92,113 @@ class LoginPage extends StatelessWidget {
 
             //registration screen toggle
             InkWell(
-              child: const Text(
-                "Don't have an account? Register now",
-                style: TextStyle(
-                  color: Colors.black,
+              child: RichText(
+                text: TextSpan(
+                  children: [
+                    TextSpan(
+                      text: "Don't have an account? ",
+                      style: TextStyle(
+                        fontFamily: GoogleFonts.gloriaHallelujah().fontFamily,
+                        color: Colors.black,
+                      ),
+                    ),
+                    TextSpan(
+                      text: "Register now",
+                      style: TextStyle(
+                        color: Colors.pink,
+                        fontFamily: GoogleFonts.gloriaHallelujah().fontFamily,
+                      ),
+                    )
+                  ],
                 ),
               ),
-              onTap: () {},
+              onTap: () => Get.offAll(const RegistrationPage()),
             )
           ],
         ),
+      ),
+    );
+  }
+}
+
+class LoginInputFields extends StatelessWidget {
+  const LoginInputFields({
+    super.key,
+    required this.width,
+  });
+
+  final double width;
+
+  @override
+  Widget build(BuildContext context) {
+    return Padding(
+      padding: const EdgeInsets.symmetric(horizontal: 50),
+      child: Wrap(
+        direction: Axis.vertical,
+        crossAxisAlignment: WrapCrossAlignment.start,
+        children: [
+          const Text(
+            "Email",
+            style: TextStyle(
+              fontSize: 14,
+            ),
+          ),
+          const SizedBox(height: 5),
+
+          //email field
+          Container(
+            height: 50,
+            width: width * 0.7,
+            decoration: BoxDecoration(
+              borderRadius: BorderRadius.circular(10),
+              border: Border.all(width: 1, color: Colors.black),
+            ),
+            child: const TextField(
+              decoration: InputDecoration(
+                contentPadding: EdgeInsets.only(left: 10, top: 10),
+                border: InputBorder.none,
+                prefixIcon: Icon(CupertinoIcons.mail),
+              ),
+            ),
+          ),
+          const SizedBox(height: 15),
+          const Text(
+            "Password",
+            style: TextStyle(
+              fontSize: 14,
+            ),
+          ),
+          const SizedBox(height: 5),
+
+          //password field
+          Container(
+            height: 50,
+            width: width * 0.7,
+            decoration: BoxDecoration(
+              borderRadius: BorderRadius.circular(10),
+              border: Border.all(width: 1, color: Colors.black),
+            ),
+            child: const TextField(
+              decoration: InputDecoration(
+                contentPadding: EdgeInsets.only(left: 10, top: 10),
+                border: InputBorder.none,
+                prefixIcon: Icon(CupertinoIcons.lock_fill),
+              ),
+            ),
+          ),
+          const SizedBox(height: 5),
+
+          //forgot password section
+          InkWell(
+            child: const Text(
+              'Forgot Password?',
+              style: TextStyle(
+                color: Colors.pink,
+              ),
+            ),
+            onTap: () {},
+          ),
+        ],
       ),
     );
   }

@@ -22,3 +22,5 @@ export 'package:tazee/firebase_options.dart';
 export 'package:firebase_auth/firebase_auth.dart';
 export 'package:tazee/views/registration/registration_page.dart';
 export 'package:tazee/views/login/login_page.dart';
+export 'package:google_sign_in/google_sign_in.dart';
+export 'package:tazee/controllers/google_signin_controller.dart';
