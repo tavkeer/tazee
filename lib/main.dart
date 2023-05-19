@@ -1,5 +1,3 @@
-import 'package:tazee/views/home_page/home_page.dart';
-
 import 'export_screens.dart';
 
 void main() async {

@@ -1,3 +1,4 @@
+import 'package:tazee/controllers/email_signin_controller.dart';
 import 'package:tazee/export_screens.dart';
 
 class HomePage extends StatelessWidget {
@@ -5,6 +6,8 @@ class HomePage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    GoogleSignController googleSignController = Get.put(GoogleSignController());
+    EmailSignController emailSignController = Get.put(EmailSignController());
     return Scaffold(
       body: Center(
         child: SizedBox(
@@ -12,7 +15,10 @@ class HomePage extends StatelessWidget {
           width: 500,
           child: MyButton(
             text: "Signout",
-            onTap: () {},
+            onTap: () {
+              googleSignController.signout();
+              emailSignController.signout();
+            },
           ),
         ),
       ),

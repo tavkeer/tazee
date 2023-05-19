@@ -1,14 +1,12 @@
-import 'dart:io';
 import 'package:tazee/export_screens.dart';
-import 'package:tazee/views/home_page/home_page.dart';
+import 'dart:io';
 
 class GoogleSignController extends GetxController {
-  User? user;
   handleGoogleLogin() async {
     try {
       //internet not connected checkup
-
       await InternetAddress.lookup("www.google.com");
+
       //instance of gSignin
       final GoogleSignInAccount? gUser = await GoogleSignIn().signIn();
 
@@ -34,14 +32,26 @@ class GoogleSignController extends GetxController {
       (user) {
         if (user != null) {
           debugPrint("GoogleloginSucess");
-          Get.to(const HomePage());
+          Get.offAll(const HomePage());
         }
       },
     );
   }
 
   signout() async {
-    await FirebaseAuth.instance.signOut();
-    await GoogleSignIn().signOut();
+    handleSignOut().then((user) {
+      if (user != null) {
+        debugPrint(user.toString());
+        Get.offAll(const LoginPage());
+      }
+    });
+  }
+
+  handleSignOut() async {
+    try {
+      await GoogleSignIn().signOut();
+    } catch (e) {
+      debugPrint(e.toString());
+    }
   }
 }
