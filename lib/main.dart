@@ -1,3 +1,5 @@
+import 'package:tazee/views/home_page/home_page.dart';
+
 import 'export_screens.dart';
 
 void main() async {
@@ -28,7 +30,7 @@ class MyApp extends StatelessWidget {
         appBarTheme: const AppBarTheme(backgroundColor: Colors.white),
         // fontFamily: GoogleFonts.gloriaHallelujah().fontFamily,
       ),
-      home: const RegistrationPage(),
+      home: const HomePage(),
     );
   }
 }
