@@ -26,7 +26,7 @@ class MyApp extends StatelessWidget {
         useMaterial3: true,
         scaffoldBackgroundColor: Colors.white,
         appBarTheme: const AppBarTheme(backgroundColor: Colors.white),
-        // fontFamily: GoogleFonts.gloriaHallelujah().fontFamily,
+        fontFamily: GoogleFonts.gloriaHallelujah().fontFamily,
       ),
       home: const LoginPage(),
     );
