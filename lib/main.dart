@@ -28,7 +28,7 @@ class MyApp extends StatelessWidget {
         appBarTheme: const AppBarTheme(backgroundColor: Colors.white),
         // fontFamily: GoogleFonts.gloriaHallelujah().fontFamily,
       ),
-      home: const HomePage(),
+      home: const LoginPage(),
     );
   }
 }

@@ -1,4 +1,3 @@
-import 'package:tazee/controllers/email_signin_controller.dart';
 import 'package:tazee/export_screens.dart';
 
 class HomePage extends StatelessWidget {

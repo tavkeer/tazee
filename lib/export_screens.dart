@@ -2,7 +2,7 @@ export 'package:flutter/material.dart';
 export 'package:get/route_manager.dart';
 export 'package:google_fonts/google_fonts.dart';
 export 'package:get/get.dart';
-export 'package:tazee/controllers/navigation_controller.dart';
+export 'package:tazee/controllers/email_signin_controller.dart';
 export 'package:firebase_core/firebase_core.dart';
 export 'package:tazee/firebase_options.dart';
 export 'package:firebase_auth/firebase_auth.dart';
