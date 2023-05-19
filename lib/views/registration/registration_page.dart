@@ -44,7 +44,8 @@ class RegistrationPage extends StatelessWidget {
               child: const Padding(
                 padding: EdgeInsets.all(12.0),
                 child: Icon(
-                  FontAwesomeIcons.google,
+                  Icons.add,
+                  // FontAwesomeIcons.google,
                   color: Colors.red,
                   size: 30,
                 ),
