@@ -49,7 +49,7 @@ class LoginPage extends StatelessWidget {
               // username textfield
               MyTextField(
                 controller: usernameController,
-                hintText: 'Username',
+                hintText: 'Email',
                 obscureText: false,
               ),
 
@@ -69,10 +69,13 @@ class LoginPage extends StatelessWidget {
                 padding: const EdgeInsets.symmetric(horizontal: 25.0),
                 child: Row(
                   mainAxisAlignment: MainAxisAlignment.end,
-                  children: [
+                  children: const [
                     Text(
                       'Forgot Password?',
-                      style: TextStyle(color: Colors.grey[600]),
+                      style: TextStyle(
+                        color: Colors.pink,
+                        fontWeight: FontWeight.w400,
+                      ),
                     ),
                   ],
                 ),
@@ -83,6 +86,7 @@ class LoginPage extends StatelessWidget {
               // sign in button
               MyButton(
                 onTap: () {},
+                text: "Login",
               ),
 
               const SizedBox(height: 50),
