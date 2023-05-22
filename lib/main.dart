@@ -1,16 +1,20 @@
-import 'package:flutter/services.dart';
-
 import 'export_screens.dart';
 
 void main() async {
+  //for firebase
   WidgetsFlutterBinding.ensureInitialized();
   await Firebase.initializeApp(
     options: DefaultFirebaseOptions.currentPlatform,
   );
-  SystemChrome.setSystemUIOverlayStyle(const SystemUiOverlayStyle(
-    systemNavigationBarColor: Color(0xFFEFEBE9),
-  ));
 
+  //for status bar color
+  SystemChrome.setSystemUIOverlayStyle(
+    const SystemUiOverlayStyle(
+      systemNavigationBarColor: Color(0xFFEFEBE9),
+    ),
+  );
+
+  //running widget tree
   runApp(const MyApp());
 }
 

@@ -15,3 +15,4 @@ export 'package:tazee/views/login/components/my_button.dart';
 export 'package:tazee/views/login/components/my_textfield.dart';
 export 'package:tazee/views/login/components/square_tile.dart';
 export 'package:tazee/views/home_page/home_page.dart';
+export 'package:flutter/services.dart';
