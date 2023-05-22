@@ -32,7 +32,7 @@ class GoogleSignController extends GetxController {
       (user) {
         if (user != null) {
           debugPrint("GoogleloginSucess");
-          Get.offAll(const HomePage());
+          Get.off(() => const HomePage());
         }
       },
     );
@@ -42,7 +42,7 @@ class GoogleSignController extends GetxController {
     handleSignOut().then((user) {
       if (user != null) {
         debugPrint(user.toString());
-        Get.offAll(const LoginPage());
+        Get.offAll(() => const LoginPage());
       }
     });
   }

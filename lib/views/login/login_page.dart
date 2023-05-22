@@ -21,7 +21,7 @@ class LoginPage extends StatelessWidget {
     //login function
     login() async {
       EmailSignController emailSignController = Get.put(EmailSignController());
-      emailSignController.sgnin(
+      emailSignController.login(
         emailController.text,
         passwordController.text,
       );
@@ -150,17 +150,20 @@ class LoginPage extends StatelessWidget {
                       // not a member? register now
                       Row(
                         mainAxisAlignment: MainAxisAlignment.center,
-                        children: const [
-                          Text(
+                        children: [
+                          const Text(
                             'Not a member?',
                             style: TextStyle(color: Colors.grey),
                           ),
-                          SizedBox(width: 4),
-                          Text(
-                            'Register now',
-                            style: TextStyle(
-                              color: Colors.blue,
-                              fontWeight: FontWeight.bold,
+                          const SizedBox(width: 4),
+                          InkWell(
+                            onTap: () => Get.off(const RegistrationPage()),
+                            child: const Text(
+                              'Register now',
+                              style: TextStyle(
+                                color: Colors.blue,
+                                fontWeight: FontWeight.bold,
+                              ),
                             ),
                           ),
                         ],

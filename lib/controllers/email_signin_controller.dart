@@ -11,14 +11,14 @@ class EmailSignController extends GetxController {
   }
 
   //sign in function
-  sgnin(String email, String password) async {
+  login(String email, String password) async {
     try {
       changeLoading();
       await FirebaseAuth.instance
           .signInWithEmailAndPassword(email: email, password: password)
           .then((user) {
         if (user != null) {
-          Get.offAll(const HomePage());
+          Get.off(() => const HomePage());
         }
       });
     } on FirebaseAuthException catch (e) {
@@ -39,7 +39,7 @@ class EmailSignController extends GetxController {
     } catch (e) {
       debugPrint(e.toString());
     }
-    Get.offAll(const LoginPage());
+    Get.offAll(() => const LoginPage());
   }
 
   //keeping user signned in
@@ -55,5 +55,29 @@ class EmailSignController extends GetxController {
       return true;
     }
     return false;
+  }
+
+  //register user with email and password
+  register(String email, String password) async {
+    try {
+      changeLoading();
+      await FirebaseAuth.instance
+          .createUserWithEmailAndPassword(email: email, password: password)
+          .then(
+        (user) {
+          if (user != null) {
+            Get.off(() => const HomePage());
+          }
+        },
+      );
+    } on FirebaseAuthException catch (e) {
+      Get.snackbar(
+        "Error Occured",
+        "${e.message}",
+        snackPosition: SnackPosition.BOTTOM,
+      );
+      debugPrint(e.message);
+    }
+    changeLoading();
   }
 }
