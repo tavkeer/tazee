@@ -95,29 +95,14 @@ class RegistrationPage extends StatelessWidget {
 
                       // password textfield
                       MyTextField(
-                        controller: passwordController,
-                        hintText: 'Password',
-                        obscureText: true,
-                      ),
+                          controller: passwordController,
+                          hintText: 'Password',
+                          obscureText: true),
 
                       const SizedBox(height: 10),
 
                       // forgot password?
-                      Padding(
-                        padding: const EdgeInsets.symmetric(horizontal: 25.0),
-                        child: Row(
-                          mainAxisAlignment: MainAxisAlignment.end,
-                          children: const [
-                            Text(
-                              'Forgot Password?',
-                              style: TextStyle(
-                                color: Colors.pink,
-                                fontWeight: FontWeight.w400,
-                              ),
-                            ),
-                          ],
-                        ),
-                      ),
+                      const ForgotPasswordSection(),
 
                       const SizedBox(height: 25),
 
@@ -130,62 +115,23 @@ class RegistrationPage extends StatelessWidget {
                       const SizedBox(height: 50),
 
                       // or continue with section
-                      Padding(
-                        padding: const EdgeInsets.symmetric(horizontal: 25.0),
-                        child: Row(
-                          children: [
-                            Expanded(
-                              child: Divider(
-                                  thickness: 0.5, color: Colors.grey[400]),
-                            ),
-                            Padding(
-                              padding:
-                                  const EdgeInsets.symmetric(horizontal: 10.0),
-                              child: Text(
-                                'Or continue with',
-                                style: TextStyle(
-                                  color: Colors.grey[700],
-                                ),
-                              ),
-                            ),
-                            Expanded(
-                              child: Divider(
-                                thickness: 0.5,
-                                color: Colors.grey[400],
-                              ),
-                            ),
-                          ],
-                        ),
-                      ),
+                      const DividerWithMiddleText(text: 'Or continue with'),
 
                       const SizedBox(height: 30),
 
-                      // google + apple sign in buttons
+                      // google sign in button
                       const SquareTile(imagePath: 'assets/google.png'),
 
                       const SizedBox(height: 30),
 
-                      // not a member? register now
-                      Row(
-                        mainAxisAlignment: MainAxisAlignment.center,
-                        children: [
-                          const Text(
-                            'Already a member?',
-                            style: TextStyle(color: Colors.grey),
-                          ),
-                          const SizedBox(width: 4),
-                          InkWell(
-                            onTap: () => Get.off(() => const LoginPage()),
-                            child: const Text(
-                              'login now',
-                              style: TextStyle(
-                                color: Colors.blue,
-                                fontWeight: FontWeight.bold,
-                              ),
-                            ),
-                          ),
-                        ],
-                      )
+                      // Already a member? login now
+                      ToggleLoginSignup(
+                        textOne: 'Already a member?',
+                        textTwo: 'login now',
+                        ontap: () => Get.off(
+                          () => const LoginPage(),
+                        ),
+                      ),
                     ],
                   ),
                 ),
