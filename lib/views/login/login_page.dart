@@ -48,15 +48,6 @@ class LoginPage extends StatelessWidget {
                     children: [
                       const SizedBox(height: 50),
 
-                      // logo
-
-                      //***alternate logo for the app */
-                      // Lottie.asset(
-                      //   "assets/loginIcon.json",
-                      //   width: width * 0.8,
-                      //   height: height * 0.2,
-                      // ),
-
                       Image.asset(
                         "assets/logo.png",
                         width: width * 0.8,

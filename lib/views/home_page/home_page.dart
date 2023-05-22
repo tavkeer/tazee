@@ -17,8 +17,8 @@ class HomePage extends StatelessWidget {
       ),
       body: Center(
         child: SizedBox(
-          height: 200,
-          width: 500,
+          height: 100,
+          width: 200,
           child: MyButton(
             text: "Signout",
             onTap: () {
