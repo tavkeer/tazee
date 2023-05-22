@@ -5,14 +5,16 @@ class LoginPage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    //height and width of the screen
+    //width of the screen
     final double width = MediaQuery.of(context).size.width;
+
+    //height of the screen
     final double height = MediaQuery.of(context).size.height;
 
-    //usennameControllers
+    //usennameController
     final TextEditingController emailController = TextEditingController();
 
-    //passwordControllers
+    //passwordController
     final TextEditingController passwordController = TextEditingController();
 
     //progress indicator
@@ -28,7 +30,6 @@ class LoginPage extends StatelessWidget {
     }
 
     return Scaffold(
-      backgroundColor: Colors.grey[300],
       body: Obx(
         () => (progressController.isLoading.value)
             ? const Center(
@@ -47,8 +48,16 @@ class LoginPage extends StatelessWidget {
                       const SizedBox(height: 50),
 
                       // logo
-                      Lottie.asset(
-                        "assets/loginIcon.json",
+
+                      //***alternate logo for the app */
+                      // Lottie.asset(
+                      //   "assets/loginIcon.json",
+                      //   width: width * 0.8,
+                      //   height: height * 0.2,
+                      // ),
+
+                      Image.asset(
+                        "assets/logo.png",
                         width: width * 0.8,
                         height: height * 0.2,
                       ),
@@ -157,7 +166,9 @@ class LoginPage extends StatelessWidget {
                           ),
                           const SizedBox(width: 4),
                           InkWell(
-                            onTap: () => Get.off(const RegistrationPage()),
+                            onTap: () => Get.off(
+                              () => const RegistrationPage(),
+                            ),
                             child: const Text(
                               'Register now',
                               style: TextStyle(

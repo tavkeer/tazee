@@ -1,3 +1,5 @@
+import 'package:flutter/services.dart';
+
 import 'export_screens.dart';
 
 void main() async {
@@ -5,6 +7,10 @@ void main() async {
   await Firebase.initializeApp(
     options: DefaultFirebaseOptions.currentPlatform,
   );
+  SystemChrome.setSystemUIOverlayStyle(const SystemUiOverlayStyle(
+    systemNavigationBarColor: Color(0xFFEFEBE9),
+  ));
+
   runApp(const MyApp());
 }
 
@@ -24,8 +30,11 @@ class MyApp extends StatelessWidget {
       ),
       theme: ThemeData(
         useMaterial3: true,
-        scaffoldBackgroundColor: Colors.white,
-        appBarTheme: const AppBarTheme(backgroundColor: Colors.white),
+        scaffoldBackgroundColor: const Color(0xFFEFEBE9),
+        appBarTheme: const AppBarTheme(
+          backgroundColor: Color(0xFFEFEBE9),
+        ),
+
         // fontFamily: GoogleFonts.gloriaHallelujah().fontFamily,
       ),
       home: const LoginPage(),

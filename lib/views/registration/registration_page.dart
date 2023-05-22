@@ -5,17 +5,19 @@ class RegistrationPage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    //height and width of the screen
+    //width of screen
     final double width = MediaQuery.of(context).size.width;
+
+    //height of screen
     final double height = MediaQuery.of(context).size.height;
 
-    //emailControllers
+    //emailController
     final TextEditingController emailController = TextEditingController();
 
-    //usennameControllers
+    //usennameController
     final TextEditingController usernameController = TextEditingController();
 
-    //passwordControllers
+    //passwordController
     final TextEditingController passwordController = TextEditingController();
 
     //progress indicator
@@ -30,7 +32,6 @@ class RegistrationPage extends StatelessWidget {
     }
 
     return Scaffold(
-      backgroundColor: Colors.grey[300],
       body: Obx(
         () => (progressController.isLoading.value)
             ? const Center(
@@ -49,8 +50,14 @@ class RegistrationPage extends StatelessWidget {
                       const SizedBox(height: 30),
 
                       // logo
-                      Lottie.asset(
-                        "assets/loginIcon.json",
+                      // Lottie.asset(
+                      //   "assets/loginIcon.json",
+                      //   width: width * 0.8,
+                      //   height: height * 0.2,
+                      // ),
+
+                      Image.asset(
+                        "assets/logo.png",
                         width: width * 0.8,
                         height: height * 0.2,
                       ),
@@ -122,23 +129,23 @@ class RegistrationPage extends StatelessWidget {
 
                       const SizedBox(height: 50),
 
-                      // or continue with
+                      // or continue with section
                       Padding(
                         padding: const EdgeInsets.symmetric(horizontal: 25.0),
                         child: Row(
                           children: [
                             Expanded(
                               child: Divider(
-                                thickness: 0.5,
-                                color: Colors.grey[400],
-                              ),
+                                  thickness: 0.5, color: Colors.grey[400]),
                             ),
                             Padding(
                               padding:
                                   const EdgeInsets.symmetric(horizontal: 10.0),
                               child: Text(
                                 'Or continue with',
-                                style: TextStyle(color: Colors.grey[700]),
+                                style: TextStyle(
+                                  color: Colors.grey[700],
+                                ),
                               ),
                             ),
                             Expanded(
@@ -168,7 +175,7 @@ class RegistrationPage extends StatelessWidget {
                           ),
                           const SizedBox(width: 4),
                           InkWell(
-                            onTap: () => Get.off(const LoginPage()),
+                            onTap: () => Get.off(() => const LoginPage()),
                             child: const Text(
                               'login now',
                               style: TextStyle(
