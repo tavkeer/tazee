@@ -5,8 +5,14 @@ class HomePage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    //google sign in controller
     GoogleSignController googleSignController = Get.put(GoogleSignController());
+
+    //email sign in controller
     EmailSignController emailSignController = Get.put(EmailSignController());
+
+    // final double height = MediaQuery.of(context).size.height;
+    final double width = MediaQuery.of(context).size.width;
     return Scaffold(
       appBar: AppBar(
         systemOverlayStyle: const SystemUiOverlayStyle(
@@ -15,6 +21,7 @@ class HomePage extends StatelessWidget {
         ),
         backgroundColor: const Color(0xFFEFEBE9),
       ),
+      bottomNavigationBar: FloatingBottomNavBar(width: width),
       body: Center(
         child: SizedBox(
           height: 100,

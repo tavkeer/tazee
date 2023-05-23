@@ -46,7 +46,9 @@ class EmailSignController extends GetxController {
   @override
   void onReady() {
     super.onReady();
-    (loginStatus()) ? Get.off(const HomePage()) : Get.off(loginStatus());
+    (loginStatus())
+        ? Get.off(() => const HomePage())
+        : Get.off(() => const LoginPage());
   }
 
   //keeping user signned in
