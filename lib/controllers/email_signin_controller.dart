@@ -18,7 +18,7 @@ class EmailSignController extends GetxController {
           .signInWithEmailAndPassword(email: email, password: password)
           .then((user) {
         if (user != null) {
-          Get.off(() => const HomePage());
+          Get.off(() => const LandingPage());
         }
       });
     } on FirebaseAuthException catch (e) {
@@ -47,7 +47,7 @@ class EmailSignController extends GetxController {
   void onReady() {
     super.onReady();
     (loginStatus())
-        ? Get.off(() => const HomePage())
+        ? Get.off(() => const LandingPage())
         : Get.off(() => const LoginPage());
   }
 
@@ -68,7 +68,7 @@ class EmailSignController extends GetxController {
           .then(
         (user) {
           if (user != null) {
-            Get.off(() => const HomePage());
+            Get.off(() => const LandingPage());
           }
         },
       );

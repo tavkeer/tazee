@@ -32,7 +32,7 @@ class GoogleSignController extends GetxController {
       (user) {
         if (user != null) {
           debugPrint("GoogleloginSucess");
-          Get.off(() => const HomePage());
+          Get.off(() => const LandingPage());
         }
       },
     );

@@ -21,7 +21,7 @@ export 'package:tazee/widgets/divider_with_middletext.dart';
 export 'package:tazee/widgets/toggle_signup.dart';
 export 'package:flutter/services.dart';
 export 'package:tazee/widgets/floating_bottom_navbar.dart';
-
+export 'package:tazee/views/landing_page/landing_page.dart';
 export 'package:tazee/views/home_page/utils/popular_place_container.dart';
 export 'package:tazee/views/home_page/components/category_list.dart';
 export 'package:tazee/views/home_page/utils/category_listitem.dart';

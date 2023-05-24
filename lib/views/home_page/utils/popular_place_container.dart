@@ -27,6 +27,10 @@ class PopularPlaces extends StatelessWidget {
           width: 2,
           color: Colors.white,
         ),
+        image: const DecorationImage(
+          image: AssetImage('assets/tint.jpeg'),
+          fit: BoxFit.cover,
+        ),
       ),
       child: Padding(
         padding: const EdgeInsets.all(10),
@@ -53,8 +57,8 @@ class PopularPlaces extends StatelessWidget {
                     Text(
                       place,
                       style: TextStyle(
-                        fontSize: width * 0.06,
-                        fontWeight: FontWeight.bold,
+                        fontSize: width * 0.05,
+                        fontWeight: FontWeight.w400,
                         fontFamily: GoogleFonts.ubuntu().fontFamily,
                       ),
                     ),

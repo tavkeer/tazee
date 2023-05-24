@@ -1,4 +1,3 @@
-// ignore_for_file: public_member_api_docs, sort_constructors_first
 import 'package:tazee/export_screens.dart';
 
 class HomePage extends StatelessWidget {
@@ -15,6 +14,7 @@ class HomePage extends StatelessWidget {
     final double height = MediaQuery.of(context).size.height;
     final double width = MediaQuery.of(context).size.width;
     return Scaffold(
+      backgroundColor: Colors.transparent,
       body: Padding(
         padding: const EdgeInsets.symmetric(horizontal: 10),
         child: SingleChildScrollView(
@@ -74,15 +74,15 @@ class HomePage extends StatelessWidget {
               PopularPlaces(
                 width: width,
                 place: "Gulmarag",
-                location: "J&K",
+                location: "Anathnag",
                 imgPath: 'assets/gul.jpeg',
               ),
               const SizedBox(height: 10),
               PopularPlaces(
                 width: width,
-                place: "Gulmarag",
-                location: "J&K",
-                imgPath: 'assets/gul.jpeg',
+                place: "Pahalgam",
+                location: "Budgam",
+                imgPath: 'assets/pahalgam.jpeg',
               ),
               const SizedBox(height: 10),
               PopularPlaces(
