@@ -30,7 +30,9 @@ class MyApp extends StatelessWidget {
       debugShowCheckedModeBanner: false,
       darkTheme: ThemeData(
         scaffoldBackgroundColor: Colors.white,
-        appBarTheme: const AppBarTheme(backgroundColor: Colors.white),
+        appBarTheme: const AppBarTheme(
+          backgroundColor: Color(0xFFEFEBE9),
+        ),
       ),
       theme: ThemeData(
         useMaterial3: true,
